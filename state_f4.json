@@ -1,1 +1,1 @@
-{"run": 26, "scenario": "invalid_aws_secret_format"}
+{"run": 27, "scenario": "invalid_redis_url_format"}
