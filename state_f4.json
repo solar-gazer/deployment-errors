@@ -1,1 +1,1 @@
-{"run": 12, "scenario": "fail_connect_elasticsearch"}
+{"run": 13, "scenario": "permission_denied_database_write"}
