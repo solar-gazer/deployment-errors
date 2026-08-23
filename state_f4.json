@@ -1,1 +1,1 @@
-{"run": 70, "scenario": "invalid_api_token"}
+{"run": 71, "scenario": "expired_aws_credentials"}
