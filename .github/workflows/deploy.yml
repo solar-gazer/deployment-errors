@@ -1,26 +1,27 @@
-name: Deploy
+name: F4 Deployment Simulator
 
-on: [push]
+on:
+  push:
+    branches: [ "feature/f4-deployment-errors" ]
 
 jobs:
-  deploy:
+  validate:
     runs-on: ubuntu-latest
-    
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-      
+      - name: Checkout code
+        uses: actions/checkout@v3
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
-      
-      - name: Deploy Application
-        run: python app.py
-        env:
-          DATABASE_URL: ${{ secrets.DATABASE_URL }}
-          API_KEY: ${{ secrets.API_KEY }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          REDIS_URL: ${{ secrets.REDIS_URL }}
-          FAIL_ON: ${{ secrets.FAIL_ON }}
+          python-version: '3.10'
+
+      - name: Run Deployment Validation
+        run: |
+          # Check if the state file exists, extract the scenario, and run the app
+          if [ -f state_f4.json ]; then
+            SCENARIO=$(jq -r '.scenario' state_f4.json)
+            echo "Extracted scenario: $SCENARIO"
+            export FAIL_ON=$SCENARIO
+          fi
+          python app.py
