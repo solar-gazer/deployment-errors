@@ -1,1 +1,1 @@
-{"run": 10, "scenario": "fail_connect_database"}
+{"run": 11, "scenario": "fail_connect_redis"}
