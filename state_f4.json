@@ -1,1 +1,1 @@
-{"run": 9, "scenario": "invalid_redis_url_format"}
+{"run": 1, "scenario": "missing_api_key"}

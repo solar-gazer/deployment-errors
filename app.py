@@ -44,7 +44,7 @@ def validate_deployment_config():
         value = os.environ.get(var_name)
         
         if not value:
-            if fail_on == var_name or fail_on == check_name:
+            if fail_on and (check_name in fail_on or var_name in fail_on):
                 logger.error(f"KeyError: '{var_name}' not found in environment")
                 raise KeyError(f"'{var_name}'")
             continue
