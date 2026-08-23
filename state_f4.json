@@ -1,1 +1,1 @@
-{"run": 3, "scenario": "missing_aws_secret_key"}
+{"run": 4, "scenario": "missing_redis_url"}
