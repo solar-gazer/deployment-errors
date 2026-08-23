@@ -1,1 +1,1 @@
-{"run": 99, "scenario": "invalid_redis_url_format"}
+{"run": 100, "scenario": "fail_connect_database"}
