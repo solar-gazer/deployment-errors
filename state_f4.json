@@ -1,1 +1,1 @@
-{"run": 22, "scenario": "missing_redis_url"}
+{"run": 23, "scenario": "invalid_database_url_short"}
